@@ -42,8 +42,9 @@ classdef Tree
             allsafe = [allDecisionNodes.id];
             
             p.highlight([allDecisionNodes.id],"NodeColor","green") % Mark safe node green,
-            p.highlight(allsafe(2:end),allsafe(1:end-1),"EdgeColor","green") % Mark all the edges leading to the safe node green
-        
+            p.highlight(allsafe(2:end),allsafe(1:end-1));
+            %p.highlight(allsafe(2:end),allsafe(1:end-1),"EdgeColor","green","EdgeFontSize",8) % Mark all the edges leading to the safe node green
+            p.MarkerSize = 8;
             % Assign
             obj.digraph = G;
             obj.visualization =p;

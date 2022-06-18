@@ -1,14 +1,16 @@
+%% States
 VehicleEgo = State(10,0,10);
 VehiclesOther = [State(24,0,2) State(20,3.7,8) State(0,0,13)];
 
-deltaT = 2;
-maxDepth = 4;
+
+%% Horizon
+deltaT = 1;
+maxDepth = 3;
 count = 1;
 
 
+% All maneuvers
 allActions = Maneuver.getAllActions;
-
-%allActions = {'A','B','C'};
 
 
 
