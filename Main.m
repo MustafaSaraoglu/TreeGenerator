@@ -1,8 +1,8 @@
 VehicleEgo = State(10,0,10);
 VehiclesOther = [State(24,0,2) State(20,3.7,8) State(0,0,13)];
 
-deltaT = 1;
-maxDepth = 8;
+deltaT = 2;
+maxDepth = 4;
 count = 1;
 
 
