@@ -25,7 +25,7 @@ classdef Maneuver
         
         function newStateDist = moveConstantSpeed(state, deltaT)
             
-            mean = state.s + state.s + state.speed*deltaT;
+            mean = state.s + state.speed*deltaT;
             
             variance = deltaT;
             
