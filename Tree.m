@@ -30,11 +30,22 @@ classdef Tree
             
             SafeNodes = leafNodes([leafNodes.UnsafetyValue] <0.0001);
             
-            %% Find the best node among the safest nodes
-            [val, idx] = max([cat(1,SafeNodes.state).s]); % Performance value - Max
+            %% Find the safe nodes or the node
+            % If there is no safe node (a node with an unsafety value that is smaller than the threshold value)
+            if isempty(SafeNodes) 
+                [val, idx]=min([leafNodes.UnsafetyValue]); % Find the node with the minimum unsafety value
+                
+                SafeNodes = leafNodes(idx);
+                
+            else
+                %% Find the best node among the safest nodes
+                [val, idx] = max([cat(1,SafeNodes.state).s]); % Performance value - Max
+
+                
+            end
+            
             p.highlight(leafNodes(idx).id,"NodeColor","green") % Mark safe node green,
             disp(['Best Node ID: ',num2str(leafNodes(idx).id),', total distance: ',num2str(val)])
-            
             
 
             %% Mark all safe actions and states
